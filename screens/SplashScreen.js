@@ -4,7 +4,7 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { Font } from "expo";
 import { useFonts } from 'expo-font';
 
-export default function SplashScreen() {
+export default function SplashScreen({ navigation }) {
     const [loaded] = useFonts({
         Arial: require('../assets/fonts/arial2.ttf'),
     });
@@ -25,15 +25,13 @@ export default function SplashScreen() {
                 </TouchableOpacity>
                 <TouchableOpacity>
                     <View style={styles.customSecondaryBtn}>
-                        <Text style={styles.secondaryBtnText}>Login with Email</Text>
+                        <Text onPress={() => navigation.navigate("SignIn")} style={styles.secondaryBtnText}>Login with Email</Text>
                     </View>
                 </TouchableOpacity>
                 <TouchableOpacity>
                     <Text style={styles.secondaryText}>New to FundFU? Sign up</Text>
                 </TouchableOpacity>
             </View>
-
-            <Text style={styles.secondaryTextPrivacyPolicy}>By clicking signup, continue with Google, you agree the platforms terms of use, privacy policy and cookie policy</Text>
         </View>
     );
 }
@@ -43,12 +41,14 @@ const styles = StyleSheet.create({
         width: "100%",
         height: "100%",
         alignItems: "center",
+        justifyContent: "center",
         backgroundColor: "#150C27"
     },
     logoImage: {
         width: 231,
         height: 113,
-        marginVertical: 110
+        // marginVertical: 110
+        marginBottom: 60
     },
     // formContainer: {
     //     marginVertical: 100
@@ -85,17 +85,7 @@ const styles = StyleSheet.create({
     secondaryText: {
         fontFamily: 'Arial',
         fontWeight: "400",
-        fontSize: 10,
-        color: "rgba(255, 255, 255, 0.5)",
-        textAlign: "center",
-        marginHorizontal: 44
-    },
-    secondaryTextPrivacyPolicy: {
-        position: "absolute",
-        bottom: 18,
-        fontFamily: 'Arial',
-        fontWeight: "400",
-        fontSize: 10,
+        fontSize: 12,
         color: "rgba(255, 255, 255, 0.5)",
         textAlign: "center",
         marginHorizontal: 44
