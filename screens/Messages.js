@@ -70,8 +70,8 @@ const styles = StyleSheet.create({
         marginVertical: 15,
     },
     userProfile: {
-        width: 60,
-        height: 60,
+        width: 55,
+        height: 55,
         borderRadius: 50
     },
     textContainer: {

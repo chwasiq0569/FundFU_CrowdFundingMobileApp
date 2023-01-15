@@ -11,6 +11,7 @@ import { Feather } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
 import Messages from './screens/Messages';
+import Profile from './screens/Profile';
 
 export default function App() {
 
@@ -21,7 +22,7 @@ export default function App() {
       <Stack.Navigator screenOptions={{
         headerShown: false
       }}>
-        <Stack.Screen name="SplashScreen" independent={true} component={Messages} />
+        <Stack.Screen name="SplashScreen" independent={true} component={Profile} />
         <Stack.Screen name="SignIn" component={SignIn} />
       </Stack.Navigator>
       <View style={styles.bottomNavigationContainer}>
