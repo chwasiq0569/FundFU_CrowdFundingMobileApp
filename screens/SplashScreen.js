@@ -7,6 +7,9 @@ import { useFonts } from 'expo-font';
 export default function SplashScreen({ navigation }) {
     const [loaded] = useFonts({
         Arial: require('../assets/fonts/arial2.ttf'),
+        PoppinsMedium: require('../assets/fonts/Poppins-Medium.ttf'),
+        PoppinsBold: require('../assets/fonts/Poppins-Bold.ttf'),
+        PoppinsThin: require('../assets/fonts/Poppins-Thin.ttf')
     });
 
     if (!loaded) {

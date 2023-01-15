@@ -5,7 +5,6 @@ import { Font } from "expo";
 import { useFonts } from 'expo-font';
 
 export default function SignIn() {
-
     const [email, setEmail] = React.useState("");
     const [password, setPassword] = React.useState("");
 
@@ -57,13 +56,11 @@ const styles = StyleSheet.create({
         height: "100%",
         alignItems: "center",
         backgroundColor: "#150C27",
-        // justifyContent: "space-evenly",
         justifyContent: "center",
     },
     logoImage: {
         width: 231,
         height: 113,
-        // marginVertical: 110
         marginBottom: 60,
     },
     inputView: {
