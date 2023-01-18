@@ -30,7 +30,7 @@ export default function Profile({ navigation }) {
                     <Text style={styles.userSecondaryDetails}>Joined Nov 2022</Text>
                 </View>
             </View>
-            <CustomTabs />
+            <CustomTabs tabsList={["Backed", "Likes", "Projects"]} />
         </View>
     );
 }
@@ -39,17 +39,12 @@ const styles = StyleSheet.create({
     container: {
         width: "100%",
         height: "100%",
-        // alignItems: "center",
-        // justifyContent: "center",
         backgroundColor: "#150C27"
     },
     profileDetails: {
         width: "100%",
         alignItems: "center",
-        borderStyle: 'solid',
-        borderWidth: 2,
-        borderColor: 'red',
-        marginTop: 100,
+        marginTop: 40,
     },
     profilePicture: {
         width: 150,
