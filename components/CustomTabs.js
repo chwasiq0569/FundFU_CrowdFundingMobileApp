@@ -1,5 +1,7 @@
 import React from 'react';
 import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import BackedTabContent from './BackedTabContent';
+import LikesTabContent from './LikesTabContent';
 
 const createList = (list) => {
     return list.map((l, i) => {
@@ -7,7 +9,7 @@ const createList = (list) => {
     });
 };
 
-const CustomTabs = ({ tabsList }) => {
+const CustomTabs = ({ tabsList, contentList, children }) => {
     const list = tabsList;
     const [tabs, setTabs] = React.useState(createList(list))
     const [tabSelected, setTabSelected] = React.useState("");
@@ -22,16 +24,14 @@ const CustomTabs = ({ tabsList }) => {
         setTabs(updatedList);
     };
 
+    console.log(contentList[0])
+
     return (<View style={styles.customTabsContainer}>
         <View style={styles.tabContainer}>
             {tabs.map(item => <Text key={item?.id} onPress={() => selectItem(item)} style={item?.active ? [styles.tabStyles, styles.tabStylesActive] : styles.tabStyles}>{item?.title}</Text>)}
         </View>
         <ScrollView horizontal={false} contentContainerStyle={styles.tabContent} >
-            <Image source={require('../assets/nobackedprojects.png')} style={styles.nobackedprojectsImg} resizeMode="contain" />
-            <Text style={styles.noProjectText}>No Projects yet, but if you have great ideas. You could start a project today to make your ideas come to life.</Text>
-            <TouchableOpacity>
-                <View style={styles.getStartedBtn}><Text style={styles.btnText}>Get Started</Text></View>
-            </TouchableOpacity>
+            {contentList[tabSelected?.id]}
         </ScrollView>
     </View>);
 }

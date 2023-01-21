@@ -4,6 +4,8 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { Font } from "expo";
 import { useFonts } from 'expo-font';
 import CustomTabs from '../components/CustomTabs';
+import BackedTabContent from '../components/BackedTabContent';
+import LikesTabContent from '../components/LikesTabContent';
 
 export default function Profile({ navigation }) {
     const [loaded] = useFonts({
@@ -30,7 +32,7 @@ export default function Profile({ navigation }) {
                     <Text style={styles.userSecondaryDetails}>Joined Nov 2022</Text>
                 </View>
             </View>
-            <CustomTabs tabsList={["Backed", "Likes", "Projects"]} />
+            <CustomTabs tabsList={["Backed", "Likes"]} contentList={[<BackedTabContent />, <LikesTabContent />]} />
         </View>
     );
 }
