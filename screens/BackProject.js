@@ -34,6 +34,11 @@ export default function BackProject({ navigation }) {
             </View>
             <Image source={require('../assets/projectcover.png')} style={styles.projectCover} resizeMode="cover" />
             <CustomTabs tabsList={["Overview", "FAQ", "Updates"]} contentList={[<OverviewTabContent />]} />
+            <TouchableOpacity style={styles.btnContainer}>
+                <View style={styles.customPrimaryBtn}>
+                    <Text style={styles.primaryBtnText}>Back Project</Text>
+                </View>
+            </TouchableOpacity>
         </View>
     );
 }
@@ -64,8 +69,15 @@ const styles = StyleSheet.create({
         height: 246,
         marginVertical: 20
     },
+    btnContainer: {
+        bottom: 20,
+        width: '100%',
+        height: 60,
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
     customPrimaryBtn: {
-        width: 302,
+        width: '90%',
         height: 50,
         backgroundColor: "#7032FF",
         borderRadius: 25,
@@ -76,29 +88,16 @@ const styles = StyleSheet.create({
         fontFamily: 'Arial',
         fontWeight: "700",
         fontSize: 14,
-        color: "white"
+        color: "white",
+        fontFamily: 'PoppinsRegular',
     },
-    // customSecondaryBtn: {
-    //     width: 302,
-    //     height: 50,
-    //     backgroundColor: "#2A2C33",
-    //     borderRadius: 25,
-    //     justifyContent: "center",
-    //     alignItems: "center",
-    //     marginVertical: 18
-    // },
-    // secondaryBtnText: {
-    //     fontFamily: 'Arial',
-    //     fontWeight: "700",
-    //     fontSize: 14,
-    //     color: "white"
-    // },
     secondaryText: {
         fontFamily: 'Arial',
         fontWeight: "400",
         fontSize: 12,
         color: "rgba(255, 255, 255, 0.5)",
         textAlign: "center",
-        marginHorizontal: 44
+        marginHorizontal: 44,
+        fontFamily: 'PoppinsRegular',
     }
 });

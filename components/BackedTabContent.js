@@ -2,7 +2,7 @@ import React from 'react';
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 const BackedTabContent = () => {
-    return (<>
+    return (<View style={styles.container}>
         <Image source={require('../assets/nobackedprojects.png')} style={styles.nobackedprojectsImg} resizeMode="contain" />
         <Text style={styles.noProjectText}>No Projects yet, but if you have great ideas. You could start a project today to make your ideas come to life.</Text>
         <TouchableOpacity>
@@ -10,10 +10,13 @@ const BackedTabContent = () => {
                 <Text style={styles.btnText}>Get Started</Text>
             </View>
         </TouchableOpacity>
-    </>);
+    </View>);
 }
 
 const styles = StyleSheet.create({
+    container: {
+        alignItems: 'center'
+    },
     nobackedprojectsImg: {
         width: 250,
         height: 250,
@@ -33,7 +36,8 @@ const styles = StyleSheet.create({
         borderRadius: 25,
         flexDirection: "row",
         justifyContent: "center",
-        alignItems: "center"
+        alignItems: "center",
+        marginBottom: 120
     },
     btnText: {
         fontFamily: 'Arial',

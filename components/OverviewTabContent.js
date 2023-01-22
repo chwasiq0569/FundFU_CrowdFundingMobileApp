@@ -24,17 +24,18 @@ const OverviewTabContent = () => {
                 </View>
             </View>
         </View>
-        {/* <Image source={require('../assets/nolikes.png')} style={styles.nobackedprojectsImg} resizeMode="contain" />
-        <Text style={styles.noProjectText}>No Liked Projects. Go and Explore the Projects & Add them to your Liked List.</Text>
-        <TouchableOpacity>
-            <View style={styles.getStartedBtn}>
-                <Text style={styles.btnText}>Get Started</Text>
+        <View style={styles.userProfile}>
+            <Image source={require('../assets/projectcover.png')} style={styles.profileImage} resizeMode="cover" />
+            <View style={styles.profileDetails}>
+                <Text style={styles.projectDetails}>Created by</Text>
+                <Text style={styles.detailDull}>Tom Latham</Text>
             </View>
-        </TouchableOpacity> */}
+        </View>
     </>);
 }
 
 const styles = StyleSheet.create({
+
     nobackedprojectsImg: {
         width: 250,
         height: 250,
@@ -85,6 +86,20 @@ const styles = StyleSheet.create({
         fontFamily: 'PoppinsRegular',
         fontSize: 12,
         color: 'white'
+    },
+    userProfile: {
+        width: "100%",
+        flexDirection: "row",
+        alignItems: 'center',
+        marginVertical: 10,
+    },
+    profileImage: {
+        width: 50,
+        height: 50,
+        borderRadius: 50
+    },
+    profileDetails: {
+        marginLeft: 10
     },
     getStartedBtn: {
         width: 144,

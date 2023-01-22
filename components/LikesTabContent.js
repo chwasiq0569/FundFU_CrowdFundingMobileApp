@@ -2,7 +2,7 @@ import React from 'react';
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 const LikesTabContent = () => {
-    return (<>
+    return (<View style={styles.container}>
         <Image source={require('../assets/nolikes.png')} style={styles.nobackedprojectsImg} resizeMode="contain" />
         <Text style={styles.noProjectText}>No Liked Projects. Go and Explore the Projects & Add them to your Liked List.</Text>
         <TouchableOpacity>
@@ -10,10 +10,13 @@ const LikesTabContent = () => {
                 <Text style={styles.btnText}>Get Started</Text>
             </View>
         </TouchableOpacity>
-    </>);
+    </View>);
 }
 
 const styles = StyleSheet.create({
+    container: {
+        alignItems: 'center'
+    },
     nobackedprojectsImg: {
         width: 250,
         height: 250,
@@ -33,7 +36,8 @@ const styles = StyleSheet.create({
         borderRadius: 25,
         flexDirection: "row",
         justifyContent: "center",
-        alignItems: "center"
+        alignItems: "center",
+        marginBottom: 120
     },
     btnText: {
         fontFamily: 'Arial',

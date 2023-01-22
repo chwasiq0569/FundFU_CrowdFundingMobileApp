@@ -63,8 +63,8 @@ const styles = StyleSheet.create({
     tabContent: {
         flexGrow: 1,
         // alignItems: "center",
-        paddingBottom: 120,
-        paddingHorizontal: 20
+        paddingBottom: 20,
+        paddingHorizontal: 20,
     },
     nobackedprojectsImg: {
         width: 250,
