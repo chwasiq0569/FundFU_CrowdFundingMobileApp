@@ -12,7 +12,10 @@ const createList = (list) => {
 const CustomTabs = ({ tabsList, contentList, children }) => {
     const list = tabsList;
     const [tabs, setTabs] = React.useState(createList(list))
-    const [tabSelected, setTabSelected] = React.useState("");
+
+    console.log('tabs', tabs)
+
+    const [tabSelected, setTabSelected] = React.useState(tabs[0]);
 
     const selectItem = (selectedItem) => {
         setTabSelected(selectedItem);
@@ -31,18 +34,19 @@ const CustomTabs = ({ tabsList, contentList, children }) => {
             {tabs.map(item => <Text key={item?.id} onPress={() => selectItem(item)} style={item?.active ? [styles.tabStyles, styles.tabStylesActive] : styles.tabStyles}>{item?.title}</Text>)}
         </View>
         <ScrollView horizontal={false} contentContainerStyle={styles.tabContent} >
-            {contentList[tabSelected?.id]}
+            {contentList && contentList[tabSelected?.id]}
         </ScrollView>
     </View>);
 }
 
 const styles = StyleSheet.create({
     customTabsContainer: {
-        flex: 1
+        flex: 1,
     },
     tabContainer: {
         flexDirection: "row",
         marginTop: 20,
+        marginVertical: 20
     },
     tabStyles: {
         paddingHorizontal: 10,
@@ -58,8 +62,9 @@ const styles = StyleSheet.create({
     },
     tabContent: {
         flexGrow: 1,
-        alignItems: "center",
-        paddingBottom: 120
+        // alignItems: "center",
+        paddingBottom: 120,
+        paddingHorizontal: 20
     },
     nobackedprojectsImg: {
         width: 250,
