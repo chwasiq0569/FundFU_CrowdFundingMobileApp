@@ -6,6 +6,7 @@ import { useFonts } from 'expo-font';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import CustomTabs from '../components/CustomTabs';
 import OverviewTabContent from '../components/OverviewTabContent';
+import AccordionView from '../components/AccordionView';
 
 export default function BackProject({ navigation }) {
     const insets = useSafeAreaInsets();
@@ -33,7 +34,7 @@ export default function BackProject({ navigation }) {
                 <Text style={styles.primaryText}>NFT Marketplace Application</Text>
             </View>
             <Image source={require('../assets/projectcover.png')} style={styles.projectCover} resizeMode="cover" />
-            <CustomTabs tabsList={["Overview", "FAQ", "Updates"]} contentList={[<OverviewTabContent />]} />
+            <CustomTabs tabsList={["Overview", "FAQ", "Updates"]} contentList={[<OverviewTabContent />, <AccordionView />]} />
             <TouchableOpacity style={styles.btnContainer}>
                 <View style={styles.customPrimaryBtn}>
                     <Text style={styles.primaryBtnText}>Back Project</Text>
