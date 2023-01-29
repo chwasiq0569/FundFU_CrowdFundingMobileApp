@@ -23,7 +23,7 @@ export default function App() {
       <Stack.Navigator screenOptions={{
         headerShown: false
       }}>
-        <Stack.Screen name="BackProject" independent={true} component={BackProject} />
+        <Stack.Screen name="SplashScreen" independent={true} component={SplashScreen} />
         <Stack.Screen name="SignIn" component={SignIn} />
       </Stack.Navigator>
       {/* <BottomNavigation navigationRef={navigationRef} /> */}

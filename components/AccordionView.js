@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
     container: {
         width: "100%",
         height: "100%",
-        backgroundColor: "#150C27",
+        // backgroundColor: "#150C27",
     },
     projectTitle: {
         fontSize: 16,
@@ -83,14 +83,14 @@ const styles = StyleSheet.create({
         backgroundColor: "white",
         height: 40,
         justifyContent: 'center',
-        backgroundColor: '#01001A',
+        backgroundColor: '#150C27',
     },
     headerText: {
         color: 'white',
         fontFamily: 'PoppinsSemiBold',
     },
     content: {
-        backgroundColor: "#01001A",
+        backgroundColor: "#150C27",
     },
     contentText: {
         color: 'white',

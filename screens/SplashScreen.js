@@ -9,7 +9,8 @@ export default function SplashScreen({ navigation }) {
         Arial: require('../assets/fonts/arial2.ttf'),
         PoppinsMedium: require('../assets/fonts/Poppins-Medium.ttf'),
         PoppinsBold: require('../assets/fonts/Poppins-Bold.ttf'),
-        PoppinsThin: require('../assets/fonts/Poppins-Thin.ttf')
+        PoppinsThin: require('../assets/fonts/Poppins-Thin.ttf'),
+        PoppinsRegular: require('../assets/fonts/Poppins-Regular.ttf'),
     });
 
     if (!loaded) {
@@ -65,8 +66,8 @@ const styles = StyleSheet.create({
         alignItems: "center"
     },
     primaryBtnText: {
-        fontFamily: 'Arial',
-        fontWeight: "700",
+        fontFamily: 'PoppinsMedium',
+        // fontWeight: "700",
         fontSize: 14,
         color: "white"
     },
@@ -80,13 +81,13 @@ const styles = StyleSheet.create({
         marginVertical: 18
     },
     secondaryBtnText: {
-        fontFamily: 'Arial',
-        fontWeight: "700",
+        fontFamily: 'PoppinsMedium',
+        // fontWeight: "700",
         fontSize: 14,
         color: "white"
     },
     secondaryText: {
-        fontFamily: 'Arial',
+        fontFamily: 'PoppinsRegular',
         fontWeight: "400",
         fontSize: 12,
         color: "rgba(255, 255, 255, 0.5)",
