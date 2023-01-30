@@ -6,25 +6,33 @@ import { Feather } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
 
-const BottomNavigation = (props) => {
+const BottomNavigation = ({ navigation }) => {
+    const [hide, setHide] = React.useState(false);
     const [notAllowedRoutes, setNotAllowedRoutes] = React.useState(['BackProject']);
-    console.log('aaa', notAllowedRoutes.find(item => item == props?.navigationRef?.current?.getCurrentRoute()?.name))
-    console.log('xa', props?.navigationRef?.current?.getCurrentRoute())
-    return (notAllowedRoutes.find(item => item == props?.navigationRef?.current?.getCurrentRoute()?.name) ? <></> : <View style={styles.bottomNavigationContainer}>
+    // console.log('aaa', notAllowedRoutes)
+    // console.log('aaa', props?.navigationRef?.current?.getCurrentRoute())
+    // console.log('xa', props?.navigationRef?.current?.getCurrentRoute()?.name)
+
+    // navigationRef && React.useEffect(() => {
+    //     console.log("UPDATED", navigationRef?.current?.getCurrentRoute().name)
+    //     navigationRef && navigationRef?.current?.getCurrentRoute().name == "BackProject" ? setHide(true) : setHide(false)
+    // }, [navigationRef.current.getCurrentRoute().name])
+
+    return (<View style={styles.bottomNavigationContainer}>
         <View style={styles.bottomNavigation}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate("Feed")}>
                 <MaterialCommunityIcons name="home-outline" size={28} color="black" />
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity >
                 <Ionicons name="search-sharp" size={24} color="black" />
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate("Messages")}>
                 <Feather name="message-circle" size={24} color="black" />
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity >
                 <MaterialIcons name="notifications-none" size={28} color="black" />
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
                 <FontAwesome5 name="user" size={22} color="black" />
             </TouchableOpacity>
         </View>

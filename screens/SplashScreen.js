@@ -3,6 +3,7 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 // import ArialFont from "../assets/arial-cufonfonts/ARIAL.TTF";
 import { Font } from "expo";
 import { useFonts } from 'expo-font';
+import BottomNavigation from '../components/BottomNavigation';
 
 export default function SplashScreen({ navigation }) {
     const [loaded] = useFonts({
@@ -36,6 +37,7 @@ export default function SplashScreen({ navigation }) {
                     <Text style={styles.secondaryText}>New to FundFU? Sign up</Text>
                 </TouchableOpacity>
             </View>
+            {/* <BottomNavigation /> */}
         </View>
     );
 }

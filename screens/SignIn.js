@@ -4,12 +4,16 @@ import { Image, KeyboardAvoidingView, StyleSheet, Text, TextInput, TouchableOpac
 import { Font } from "expo";
 import { useFonts } from 'expo-font';
 
-export default function SignIn() {
+export default function SignIn({ navigation }) {
     const [email, setEmail] = React.useState("");
     const [password, setPassword] = React.useState("");
 
     const [loaded] = useFonts({
         Arial: require('../assets/fonts/arial2.ttf'),
+        PoppinsMedium: require('../assets/fonts/Poppins-Medium.ttf'),
+        PoppinsBold: require('../assets/fonts/Poppins-Bold.ttf'),
+        PoppinsThin: require('../assets/fonts/Poppins-Thin.ttf'),
+        PoppinsRegular: require('../assets/fonts/Poppins-Regular.ttf'),
     });
 
     if (!loaded) {
@@ -39,7 +43,7 @@ export default function SignIn() {
                 </View>
                 <TouchableOpacity>
                     <View style={email.length > 0 && password.length > 0 ? styles.customPrimaryBtn : styles.customSecondaryBtn}>
-                        <Text style={styles.secondaryBtnText}>Login with Email</Text>
+                        <Text onPress={() => navigation.navigate("Feed")} style={styles.secondaryBtnText}>Login</Text>
                     </View>
                 </TouchableOpacity>
                 <TouchableOpacity>
@@ -87,6 +91,7 @@ const styles = StyleSheet.create({
         marginVertical: 18
     },
     TextInput: {
+        fontFamily: 'PoppinsMedium',
         color: "rgba(255, 255, 255, 0.5)",
     },
     customPrimaryBtn: {
@@ -98,8 +103,8 @@ const styles = StyleSheet.create({
         alignItems: "center"
     },
     primaryBtnText: {
-        fontFamily: 'Arial',
-        fontWeight: "700",
+        fontFamily: 'PoppinsMedium',
+        // fontWeight: "700",
         fontSize: 14,
         color: "white"
     },
@@ -112,13 +117,13 @@ const styles = StyleSheet.create({
         alignItems: "center",
     },
     secondaryBtnText: {
-        fontFamily: 'Arial',
-        fontWeight: "700",
+        fontFamily: 'PoppinsMedium',
+        // fontWeight: "500",
         fontSize: 14,
         color: "white"
     },
     secondaryText: {
-        fontFamily: 'Arial',
+        fontFamily: 'PoppinsMedium',
         fontWeight: "400",
         fontSize: 12,
         color: "rgba(255, 255, 255, 0.5)",

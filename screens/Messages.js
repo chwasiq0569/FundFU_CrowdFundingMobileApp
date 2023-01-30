@@ -3,6 +3,7 @@ import { Image, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'reac
 // import ArialFont from "../assets/arial-cufonfonts/ARIAL.TTF";
 import { Font } from "expo";
 import { useFonts } from 'expo-font';
+import BottomNavigation from '../components/BottomNavigation';
 
 export default function Messages({ navigation }) {
     const [loaded] = useFonts({
@@ -43,6 +44,7 @@ export default function Messages({ navigation }) {
                 }
 
             </View>
+            <BottomNavigation navigation={navigation} />
         </View >
     );
 }

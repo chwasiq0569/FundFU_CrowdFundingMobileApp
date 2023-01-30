@@ -6,6 +6,7 @@ import { useFonts } from 'expo-font';
 import CustomTabs from '../components/CustomTabs';
 import BackedTabContent from '../components/BackedTabContent';
 import LikesTabContent from '../components/LikesTabContent';
+import BottomNavigation from '../components/BottomNavigation';
 
 export default function Profile({ navigation }) {
     const [loaded] = useFonts({
@@ -33,6 +34,7 @@ export default function Profile({ navigation }) {
                 </View>
             </View>
             <CustomTabs tabsList={["Backed", "Likes"]} contentList={[<BackedTabContent />, <LikesTabContent />]} />
+            <BottomNavigation navigation={navigation} />
         </View>
     );
 }

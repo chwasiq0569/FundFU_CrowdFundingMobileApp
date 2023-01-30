@@ -1,8 +1,9 @@
 import React from 'react';
 import { SafeAreaView, StyleSheet, Text, View, StatusBar, ScrollView, Image, TouchableOpacity } from 'react-native';
 import { useFonts } from 'expo-font';
+import BottomNavigation from '../components/BottomNavigation';
 
-const Feed = () => {
+const Feed = ({ navigation }) => {
 
     const [post, setPosts] = React.useState([1, 2, 3, 4, 5]);
 
@@ -40,33 +41,36 @@ const Feed = () => {
         <ScrollView style={styles.postsContainer}>
             {
                 post.map((item, i) => (
-                    <View key={item} style={i == post.length - 1 ? [styles.feedPost, styles.lastFeedStyle] : styles.feedPost}>
-                        <Image source={require('../assets/download.jpg')} style={styles.feedPostCover} resizeMode="cover" />
-                        <View style={styles.feedContent}>
-                            <Text style={styles.postHeadText}>Dark Fantasy Narrative Art Book</Text>
-                            <Text style={styles.postDetailsText}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type...</Text>
-                            <View style={styles.progressBarContainer}>
-                                <View style={styles.progress}></View>
-                            </View>
-                            <View style={styles.postStats}>
-                                <View style={styles.postStat}>
-                                    <Text style={[styles.statPrimaryText, styles.statFocusPrimaryText]}>85%</Text>
-                                    <Text style={[styles.statSecondaryText, styles.statFocusSecondaryText]}>funded</Text>
+                    <TouchableOpacity key={item} onPress={() => navigation.navigate("BackProject")}>
+                        <View style={i == post.length - 1 ? [styles.feedPost, styles.lastFeedStyle] : styles.feedPost}>
+                            <Image source={require('../assets/download.jpg')} style={styles.feedPostCover} resizeMode="cover" />
+                            <View style={styles.feedContent}>
+                                <Text style={styles.postHeadText}>Dark Fantasy Narrative Art Book</Text>
+                                <Text style={styles.postDetailsText}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type...</Text>
+                                <View style={styles.progressBarContainer}>
+                                    <View style={styles.progress}></View>
                                 </View>
-                                <View style={styles.postStat}>
-                                    <Text style={styles.statPrimaryText}>128</Text>
-                                    <Text style={styles.statSecondaryText}>Backers</Text>
-                                </View>
-                                <View style={styles.postStat}>
-                                    <Text style={styles.statPrimaryText}>43</Text>
-                                    <Text style={styles.statSecondaryText}>hours to go</Text>
+                                <View style={styles.postStats}>
+                                    <View style={styles.postStat}>
+                                        <Text style={[styles.statPrimaryText, styles.statFocusPrimaryText]}>85%</Text>
+                                        <Text style={[styles.statSecondaryText, styles.statFocusSecondaryText]}>funded</Text>
+                                    </View>
+                                    <View style={styles.postStat}>
+                                        <Text style={styles.statPrimaryText}>128</Text>
+                                        <Text style={styles.statSecondaryText}>Backers</Text>
+                                    </View>
+                                    <View style={styles.postStat}>
+                                        <Text style={styles.statPrimaryText}>43</Text>
+                                        <Text style={styles.statSecondaryText}>hours to go</Text>
+                                    </View>
                                 </View>
                             </View>
                         </View>
-                    </View>
+                    </TouchableOpacity>
                 ))
             }
         </ScrollView>
+        <BottomNavigation navigation={navigation} />
     </SafeAreaView>);
 }
 
